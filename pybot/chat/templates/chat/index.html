@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   {% load staticfiles %}
   <meta charset="UTF-8">
@@ -9,11 +9,16 @@
 <body>
   <h1>Chat with PyBot</h1>
   <div id="chat-area">
-
+    {% for query in queries %}
+      <p>{{ query.date }} {{ query.user }}: {{ query.question }}</p>
+      <p id="answer">{{ query.answer }}</p>
+    {% endfor %}
   </div>
-  <form action="{% url 'chat:index' %}" method="get">
-    <textarea name="message" id="message" cols="20" rows="2"></textarea>
-    <input type="submit" id="send" value="Отправить" />
-</form>
+  <form action="{% url 'chat:index' %}" method="post">
+    {% csrf_token %}
+    <input name="message" id="message" type="text">
+  </form>
+
+  <script src="{%  static 'chat/script.js' %}"></script>
 </body>
 </html>

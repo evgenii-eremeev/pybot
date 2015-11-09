@@ -9,13 +9,7 @@ form {
 
 #message {
   width: 60%;
-  row: 1;
   padding: 0;
-}
-
-#send {
-  display: block;
-  margin: 0 auto;
 }
 
 #chat-area {
@@ -23,4 +17,9 @@ form {
   height: 300px;
   background-color: lightgrey;
   margin: 1em auto;
+  overflow: scroll;
+}
+
+#answer {
+  text-align: right;
 }

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login|PyBot</title>
+</head>
+<body>
+  <h1>Login</h1>
+
+  <form action="{% url 'chat:login' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <input type="submit" value="Submit">
+  </form>
+  
+</body>
+</html>
