@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+  <title>PyBot</title>
+</head>
+<body>
+  <h1>Chat with PyBot</h1>
+  <div id="chat-area">
+
+  </div>
+  <form action="{% url 'chat:index' %}" method="get">
+    <textarea name="message" id="message" cols="20" rows="2"></textarea>
+    <input type="submit" id="send" value="Отправить" />
+</form>
+</body>
+</html>
