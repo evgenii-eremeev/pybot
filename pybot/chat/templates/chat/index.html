@@ -3,7 +3,7 @@
 {% block content %}
 
   {% for query in queries %}
-    <p>{{ query }} {{ query.question }}</p>
+    <p class="question">{{ query }} {{ query.question }}</p>
     <p class="answer">{{ query.answer | safe }}</p>
   {% endfor %}
 
