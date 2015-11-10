@@ -1,5 +1,4 @@
 /.idea
 *.py[cod]
 __pycache__
-/pybot/chat/migrations
 *.sqlite3
