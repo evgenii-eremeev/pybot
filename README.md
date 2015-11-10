@@ -2,12 +2,17 @@
 
 Установка через терминал:
 
--git clone https://github.com/jaycrypto/pybot.git
--cd pybot
--pip install -r requirements.txt
--cd pybot
--python manage.py migrate
--python manage.py runserver
+git clone https://github.com/jaycrypto/pybot.git
+
+cd pybot
+
+pip install -r requirements.txt
+
+cd pybot
+
+python manage.py migrate
+
+python manage.py runserver
 
 
 Переходим по ссылеке: http://127.0.0.1:8080/chat
