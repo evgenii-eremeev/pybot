@@ -1,6 +1,6 @@
 # pybot
 
-Установка через терминал:
+**Установка через терминал:**
 
 git clone https://github.com/jaycrypto/pybot.git
 
