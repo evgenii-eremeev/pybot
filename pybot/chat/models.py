@@ -10,5 +10,15 @@ class Query(models.Model):
     answer = models.TextField(max_length=1000)
 
     def __str__(self):
-        return self.question
+        res = self.date.strftime("<дата %d.%m.%Y %H:%M:%S>")
+        res += "<{}>:".format(self.user)
+        return res
 
+
+class Notes(models.Model):
+    date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User)
+    note = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.note[:50] + "..."

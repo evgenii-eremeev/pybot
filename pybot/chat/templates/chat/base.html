@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% load staticfiles %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+  <title>PyBot</title>
+</head>
+<body>
+  <h1>Chat with PyBot</h1>
+  <div id="chat-area">
+
+    {% block content %}
+    
+    {% endblock %}
+
+  </div>
+  <form action="{% url 'chat:index' %}" method="post">
+    {% csrf_token %}
+    <input name="message" id="message" type="text" autofocus>
+  </form>
+
+  <script src="{%  static 'chat/script.js' %}"></script>
+</body>
+</html>

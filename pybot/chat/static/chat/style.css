@@ -20,6 +20,6 @@ form {
   overflow: scroll;
 }
 
-#answer {
+.answer {
   text-align: right;
 }

@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  {% load staticfiles %}
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
-  <title>PyBot</title>
-</head>
-<body>
-  <h1>Chat with PyBot</h1>
-  <div id="chat-area">
-    {% for query in queries %}
-      <p>{{ query.date }} {{ query.user }}: {{ query.question }}</p>
-      <p id="answer">{{ query.answer }}</p>
-    {% endfor %}
-  </div>
-  <form action="{% url 'chat:index' %}" method="post">
-    {% csrf_token %}
-    <input name="message" id="message" type="text">
-  </form>
+{% extends "chat/base.html" %}
 
-  <script src="{%  static 'chat/script.js' %}"></script>
-</body>
-</html>
+{% block content %}
+
+  {% for query in queries %}
+    <p>{{ query }} {{ query.question }}</p>
+    <p class="answer">{{ query.answer | safe }}</p>
+  {% endfor %}
+
+{% endblock %}
